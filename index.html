@@ -3,10 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portforio</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="portforio.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <h1>ポートフォリオ</h1>
+    <header>
+        <div id="ham">
+            <p id="openMenu">
+              <a href="#" class="menu-icon">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+              </a>
+            </p>
+          </div>
+        <div id="layerMenu" class="fullscreen-menu">
+          <a href="#" id="closeMenu" class="menu-icon">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+          </a>
+          <ul>
+            <li><a href="#illustrator">illustrator</a>
+            </li>
+            <li><a href="#CG">CG</a>
+            </li>
+            <li><a href="#work">work</a>
+            </li>
+            <li><a href="#Others">Others</a>
+            </li>
+          </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="heroBack">
+            <h1>Portforio</h1>
+        </div>
+    </section>
+
+    <section class="self">
+        <div class="wrap">
+            <img src="./picture/IMG_5894.jpeg" alt="アイコン">
+        </div>
+        <div class="self_text">
+        <h3>内田</h3>
+        <p>情報科学部の内田です。これは私のポートフォリオサイトです、ぜひご覧ください。</p>
+        </div>
+    </section>
+
+    <section class="ill">
+        <div class="background">
+          <h2 id = "illustrator">illustrator</h2>
+            <div class="back">
+                <div class="cont1">
+                    <h3>キャラクタ作成</h3>
+                    <img src="./picture/スクリーンショット 2024-07-15 10.11.25.jpg" alt="キャラクター" class="ill_1">
+                        <p>イラストレータを用いて3時間ほど作成。学部の特徴がキャラクタにも現れるよう工夫。</p>
+                </div>
+                <div class="cont2">
+                    <h3>ゲームロゴ作成</h3>
+                <img src="./picture/title.jpg" alt="ゲームロゴ">
+                        <p>イラストレータを用いて2時間ほどで作成。東京ゲームショウに出展したゲーム用のロゴの制作
+                            ロゴだけでもゲームの雰囲気が伝わるように工夫。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--CG-->
+
+    <section class="cg">
+        <div class="background">
+          <h2 id = "CG">CG</h2>
+            <div class="back">
+                <div class="cont1">
+                    <h3>キャラクタCG</h3>
+                    <img src="./picture/スクリーンショット 2024-07-15 10.42.54.jpg" alt="キャラクターcg" class="ill_1">
+                        <p>blenderを用いて4時間ほど作成。イラストレータ位で作成したイラストを用いてCG化。</p>
+                </div>
+                <div class="cont2">
+                    <h3>オブジェクトCG</h3>
+                <img src="./picture/スクリーンショット 2024-07-15 10.47.52.jpg" alt="ゲームロゴ">
+                        <p>blenderを用いて1時間ほどで作成。タービンを作成、サイズ感やプロペラを意識。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--work-->
+
+    <section class="work">
+        <div class="background">
+          <h2 id = "work">work</h2>
+            <div class="back">
+                <div class="cont1">
+                    <h3>メイキング</h3>
+                    <img src="./picture/スクリーンショット 2024-07-15 10.41.36.jpg" alt="作成過程" class="ill_1">
+                        <p>blenderを用いて4日ほど作成。実写で撮影した映像を背景にして、作成したキャラクタを合成して2分ほどの動画を作成。</p>
+                </div>
+                <div class="cont2">
+                    <h3>抜粋映像</h3>
+                <video src="./picture/work.mp4" controls></video>
+                        <p>映像の中にキャラクタが存在するように見せるために、初歩的なVFXの技術を使用した。キャラクタの動きがわかる部分を抜粋。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Others-->
+
+    <section class="otherse">
+        <h2 id ="Others">Others</h2>
+        <div class="pic-box">
+        <img src="./picture/others_01.JPG" id = "img" alt="菜の花">
+        </div>
+        <nav class="slider-controller">
+            <ul>
+                <li><a id="sc-to-left">◀︎</a></li>
+                <li id="description">菜の花</li>
+                <li><a id="sc-to-right">▶︎</a></li>
+            </ul>
+        </nav>
+        <div class="textwrap">
+        <p>最近ミラーレスカメラを購入し、現在練習中です。<br>
+            <strong>カメラ：Nikon z6</strong><br>
+            <strong>レンズ：NIKKOR Z 24-70mm f/4 S</strong>
+            </p>
+        </div>
+        </p>
+    </section>
+
+<!--footer-->
+
+    <footer>
+        <div class="backfoot">
+            <p>Thank you for watching</p>
+            <button><a href="#">top</a></button>
+        </div>
+
+    </footer>
+
+
 </body>
 </html>
