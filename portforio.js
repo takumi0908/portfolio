@@ -56,7 +56,7 @@ let interval;
 
 function changeContent(index) {
     const imgElement = document.getElementById("img");
-    const textElement = document.getElementById("description"); // テキスト用の要素を追加する必要があります
+    const textElement = document.getElementById("description"); 
     imgElement.style.opacity = 0;
     textElement.style.opacity = 0;
 
@@ -96,3 +96,55 @@ document.getElementById('sc-to-left').addEventListener('click', function() {
 });
 
 interval = setInterval(ShowContent, 10000);
+
+//ポワンロード
+const revealElements = document.querySelectorAll('.scroll-reveal');
+  
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+    } else {
+      // 以下の行をコメントアウトすると、一度表示された要素は表示されたままになります
+      // entry.target.classList.remove('revealed');
+    }
+  });
+}, {
+  threshold: 0.15 // 要素の15%が見えたときにコールバックを実行
+});
+
+revealElements.forEach(element => {
+  revealObserver.observe(element);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const lazyLoadElements = document.querySelectorAll('.lazy-load');
+
+  const lazyLoadObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+        const src = element.getAttribute('data-src');
+
+        // 画像の場合
+        if (element.tagName.toLowerCase() === 'img') {
+          element.src = src;
+        } else {
+          // 画像以外の場合（背景画像など）
+          element.style.backgroundImage = `url(${src})`;
+        }
+
+        element.classList.add('loaded');
+        observer.unobserve(element); // 一度読み込んだら監視を解除
+      }
+    });
+  }, {
+    root: null, // ビューポートをルートとして使用
+    rootMargin: '0px', // ビューポートのマージン
+    threshold: 0.1 // 要素の10%が見えたときにコールバックを実行
+  });
+
+  lazyLoadElements.forEach(element => {
+    lazyLoadObserver.observe(element);
+  });
+});
