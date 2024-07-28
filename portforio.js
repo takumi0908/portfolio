@@ -148,3 +148,34 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyLoadObserver.observe(element);
   });
 });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const modalDescription = document.getElementById('modal-description');
+    const closeBtn = document.querySelector('.modal .close');
+  
+    document.querySelectorAll('.back .cont1, .back .cont2').forEach(item => {
+      item.addEventListener('click', () => {
+        const imgSrc = item.querySelector('img').src;
+        const description = item.getAttribute('data-description');
+        
+        modalImg.src = imgSrc;
+        modalDescription.textContent = description;
+        modal.style.display = 'block';
+      });
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+  
